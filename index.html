@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Valentín 💘</title>
+
+<style>
+  body {
+    background-color: #ffe6ee;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding-top: 30px;
+  }
+
+  h1 {
+    color: #d6336c;
+  }
+
+  .tree {
+    position: relative;
+    width: 220px;
+    height: 320px;
+    margin: 20px auto;
+  }
+
+  .trunk {
+    position: absolute;
+    bottom: 0;
+    left: 95px;
+    width: 30px;
+    height: 100px;
+    background: #8b5a2b;
+    border-radius: 10px;
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 24px;
+    animation: float 2s infinite alternate;
+  }
+
+  @keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  #yes {
+    background-color: #ff4d6d;
+    color: white;
+  }
+
+  #no {
+    background-color: #adb5bd;
+    position: absolute;
+  }
+
+  #message {
+    display: none;
+    font-size: 22px;
+    color: #c9184a;
+    margin-top: 20px;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>¿Quieres ser mi San Valentín? 💖</h1>
+
+<div class="tree">
+  <div class="trunk"></div>
+  <div class="heart" style="top:20px; left:60px;">❤️</div>
+  <div class="heart" style="top:40px; left:100px;">❤️</div>
+  <div class="heart" style="top:70px; left:30px;">❤️</div>
+  <div class="heart" style="top:90px; left:140px;">❤️</div>
+  <div class="heart" style="top:120px; left:80px;">❤️</div>
+</div>
+
+<button id="yes" onclick="accept()">Sí 💘</button>
+<button id="no" onmouseover="moveNo()">No 😅</button>
+
+<div id="message">Sabía que dirías que sí 🥰💞</div>
+
+<script>
+  function moveNo() {
+    const noBtn = document.getElementById("no");
+    noBtn.style.top = Math.random() * 300 + "px";
+    noBtn.style.left = Math.random() * 300 + "px";
+  }
+
+  function accept() {
+    document.getElementById("message").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
